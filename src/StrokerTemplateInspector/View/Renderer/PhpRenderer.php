@@ -18,7 +18,8 @@ class PhpRenderer extends BasePhpRenderer
     {
         $content = parent::render($nameOrModel, $values);
         if (is_string($nameOrModel)) {
-            $content .= '<div style="z-index: 99999; border: 1px solid red; background: yellow; padding: 2px; position: absolute;">' . $nameOrModel . '</div>';
+            $file = $this->resolver($nameOrModel);
+            $content .= '<div style="z-index: 99999; border: 1px solid red; background: yellow; padding: 2px; position: absolute;">' . $nameOrModel . '(' . $file . ')</div>';
         }
         return $content;
     }
