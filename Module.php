@@ -31,11 +31,15 @@ class Module implements ConfigProviderInterface, ServiceProviderInterface, Autol
     public function getServiceConfig()
     {
         return array(
+            'invokables' => array(
+                'StrokerTemplateInspector\Collector\TemplateCollector' => 'StrokerTemplateInspector\Collector\TemplateCollector'
+            ),
             'factories' => array(
                 'StrokerTemplateStrategy' => function($sm) {
                     $renderer = new PhpRenderer;
                     $renderer->setHelperPluginManager($sm->get('ViewHelperManager'));
                     $renderer->setResolver($sm->get('ViewResolver'));
+                    $renderer->setTemplateCollector($sm->get('StrokerTemplateInspector\Collector\TemplateCollector'));
                     return new PhpRendererStrategy($renderer);
                 }
             )

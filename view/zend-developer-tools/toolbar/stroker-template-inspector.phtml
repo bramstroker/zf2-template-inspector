@@ -1,0 +1,42 @@
+<div class="zdt-toolbar-entry">
+    <div class="zdt-toolbar-preview">
+        <img src="data:image/png;base64,R0lGODlhFAAUAMQcAPz8/MnJyfv7+/n5+fr6+vj4+Pb29vf39/Ly8t/f38zMzPX19efn5+/v78vLy/Pz8/T09Orq6uvr6+Li4u7u7uPj4/Hx8fDw8MPDw8TExMbGxuzs7P///wAAAAAAAAAAACH5BAEAABwALAAAAAAUABQAAAWIICeOZGmOlRKs7JqcojIIQG0X2HsGArQYC0QjAmBkdKUA4DA4FB4XogGiQY6Ug+zhgJDYAAGTkgYQFBaWjYQBFn/LA4OQ0k6+ywXDA1EnKe8EcQZ9V3dwAwWEIn81Ao4EBAWJYXY2j5CQihyMjY6empyGmg4DojUDCiYTDi2tAQoTMLKztLW1IQA7" alt="ZF2 Logs">
+        <span class="zdt-toolbar-info">
+            Templates
+        </span>
+    </div>
+    <div class="zdt-toolbar-detail">
+        <span class="zdt-toolbar-info zdt-toolbar-info-heading">Templates loaded</span>
+        <div class="zdt-toolbar-detail-inner zdt-toolbar-info-stroker-template">
+            <ul>
+            <?php foreach($this->collector->getTemplates() as $template): ?>
+                <li><?=$template?></li>
+            <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+</div>
+<style>
+    .zdt-toolbar-entry .zdt-toolbar-info .clear {
+
+        clear: both;
+        display: block;
+    }
+
+    .zdt-toolbar-entry .zdt-toolbar-detail .zdt-toolbar-info-stroker-template {
+
+        font-size: 11px;
+        max-width: 600px;
+        witdh: 600px;
+        max-height: 300px;
+        overflow-y: auto;
+        overflow-x: auto;
+    }
+
+    .zdt-toolbar-entry .zdt-toolbar-detail hr {
+
+        border: 0;
+        border-top: 1px solid #80DC09;
+        clear: both;
+    }
+</style>
